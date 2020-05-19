@@ -1,0 +1,33 @@
+body {
+    display: grid;
+    max-width: 800px;
+    margin: 100px auto auto;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+.guessSubmit, .newGameButton {
+    font-size: 18px;
+}
+
+.newGameButton {
+    visibility: hidden;
+}
+
+.wrongOrCorrect{
+    visibility: hidden;
+    background-color: red;
+    color: aliceblue;
+    font-weight: bolder;
+    font-size: 22px;
+    padding: 10px;
+    text-align: center;
+}
+
+.guesses, .lowOrHigh {
+    visibility: hidden;
+}
+
+.show {
+    visibility: visible;
+}
