@@ -1,29 +1,33 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Угадай число</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
     <h1>Игра "Угадай число"</h1>
-    <p>Мы загадали произвольное целое число, которое находится между 1 и 100 (включительно).
-        Давай посмотрим, сможешь ли ты угадать наше число за 10 или менее попыток.
-        На каждую твою попытку мы будем тебе говорить, если ты предположил слишком большое 
-        или слишком маленькое число. Удачи!
+    <p>
+        Мы загадали произвольное целое число, которое находится между 1 и 100
+        (включительно). Давай посмотрим, сможешь ли ты угадать наше число за 10
+        или менее попыток. На каждую твою попытку мы будем тебе говорить, если ты
+        предположил слишком большое или слишком маленькое число. Удачи!
     </p>
     <div class="form">
         <label for="guessField">Введите число: </label>
-        <input type="text" id="guessField" class="guessField">
-        <input type="submit" value="Проверить предположение" class="guessSubmit">
+        <input type="number" min="0" max="100" id="guessField" class="guessField" />
+        <input type="submit" value="Проверить предположение" class="guessSubmit" />
     </div>
     <div class="resultParas">
-        <p class="guesses">Предыдущие предположения: </p>
-        <p class="wrongOrCorrect">Ошибка!</p>
+        <p class="guesses">Предыдущие предположения:</p>
+        <p class="wrongOrCorrect">Не угадали!</p>
         <p class="lowOrHigh">Слишком большое</p>
     </div>
-    <input type="submit" value="Сыграем ещё разок!" class="newGameButton">
-    <script src="script.js"></script> 
+    <input type="submit" value="Сыграем ещё разок!" class="newGameButton" />
+    <script src="script.js"></script>
 </body>
+
 </html>
