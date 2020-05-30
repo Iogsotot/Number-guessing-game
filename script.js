@@ -8,10 +8,6 @@ let resultParas = document.querySelector(".resultParas");
 let newGame = document.querySelector(".newGameButton");
 let guesses = document.querySelector(".guesses");
 
-
-let min = 0;
-let max = 100;
-
 // создание случайного "загаданного числа"
 function getRandomIntInclusive(min, max) {
   min = Math.ceil(min);
@@ -20,18 +16,18 @@ function getRandomIntInclusive(min, max) {
   // console.log("загаданное число: " + result); // проверка на правильность работы функций
   return result;
 }
-let randomInt = getRandomIntInclusive(min, max);
+let randomInt = getRandomIntInclusive(0, 100);
 
 // добавляет логику для кнопки новой игры
 function newGameStart() {
     clickCount = 0;
-    guessSubmit.disabled = false;
     guessField.disabled = false;
+    guessSubmit.disabled = false;
     newGame.classList.remove("show");
     lowOrHigh.classList.remove("show");
     resultParas.classList.remove("show");
     wrongOrCorrect.classList.remove("show");
-    wrongOrCorrect.textContent = "Не угадали!";
+    wrongOrCorrect.textContent = "Не угадал!";
     randomInt = getRandomIntInclusive(min, max);
     guesses.textContent = "Предыдущие предположения: ";
 }
