@@ -28,7 +28,7 @@ function newGameStart() {
     resultParas.classList.remove("show");
     wrongOrCorrect.classList.remove("show");
     wrongOrCorrect.textContent = "Не угадал!";
-    randomInt = getRandomIntInclusive(min, max);
+    randomInt = getRandomIntInclusive(0, 100);
     guesses.textContent = "Предыдущие предположения: ";
 }
 
