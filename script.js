@@ -18,9 +18,10 @@ function getRandomIntInclusive(min, max) {
 }
 let randomInt = getRandomIntInclusive(0, 100);
 
-// добавляет логику для кнопки новой игры
+// сброс сессии: добавляет логику для кнопки новой игры
 function newGameStart() {
     clickCount = 0;
+    stepCountMessage.remove();
     guessField.disabled = false;
     guessSubmit.disabled = false;
     newGame.classList.remove("show");
@@ -29,6 +30,7 @@ function newGameStart() {
     wrongOrCorrect.classList.remove("show");
     wrongOrCorrect.textContent = "Не угадал!";
     randomInt = getRandomIntInclusive(0, 100);
+    wrongOrCorrect.style.backgroundColor = "red";
     guesses.textContent = "Предыдущие предположения: ";
 }
 
