@@ -20,37 +20,36 @@ let randomInt = getRandomIntInclusive(0, 100);
 
 // сброс сессии: добавляет логику для кнопки новой игры
 function newGameStart() {
-    clickCount = 0;
-    stepCountMessage.remove();
-    guessField.disabled = false;
-    guessSubmit.disabled = false;
-    newGame.classList.remove("show");
-    lowOrHigh.classList.remove("show");
-    resultParas.classList.remove("show");
-    wrongOrCorrect.classList.remove("show");
-    wrongOrCorrect.textContent = "Не угадал!";
-    randomInt = getRandomIntInclusive(0, 100);
-    wrongOrCorrect.style.backgroundColor = "red";
-    guesses.textContent = "Предыдущие предположения: ";
+  clickCount = 0;
+  stepCountMessage.remove();
+  guessField.disabled = false;
+  guessSubmit.disabled = false;
+  newGame.classList.remove("show");
+  lowOrHigh.classList.remove("show");
+  resultParas.classList.remove("show");
+  wrongOrCorrect.classList.remove("show");
+  wrongOrCorrect.textContent = "Не угадал!";
+  randomInt = getRandomIntInclusive(0, 100);
+  wrongOrCorrect.style.backgroundColor = "red";
+  guesses.textContent = "Предыдущие предположения: ";
 }
 
 // проверка загаданного пользователем числа и основная логика приложения
 function checkNumber() {
   let guessNumber = guessField.value;
   if (clickCount > 0 && clickCount < 10) {
-    guesses.textContent +=  ", " + guessNumber;
+    guesses.textContent += ", " + guessNumber;
   }
   if (clickCount <= 0) {
-    guesses.textContent +=  " " + guessNumber;
+    guesses.textContent += " " + guessNumber;
   }
-  
+
   guesses.classList.add("show");
-    if (guessNumber > randomInt) {
+  if (guessNumber > randomInt) {
     lowOrHigh.textContent = "Слишком большое число";
     wrongOrCorrect.classList.add("show");
     lowOrHigh.classList.add("show");
-  }
-  if (guessNumber < randomInt) {
+  } else if (guessNumber < randomInt) {
     wrongOrCorrect.classList.add("show");
     lowOrHigh.textContent = "Слишком маленькое число";
     lowOrHigh.classList.add("show");
@@ -71,7 +70,7 @@ function checkNumber() {
 // счетчик попыток
 function clickCounter() {
   clickCount++;
-  if (clickCount >10) {
+  if (clickCount > 10) {
     wrongOrCorrect.textContent = "Попытки закончились, вы проиграли";
     guessSubmit.disabled = true;
     guessField.disabled = true;
