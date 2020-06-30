@@ -1,14 +1,46 @@
 body {
-  display: grid;
-  max-width: 800px;
-  margin: 100px auto auto;
+  height: 100vh;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 18px;
+  font-size: 16px;
+
+  background: url("background.jpg") no-repeat;
+
+  background-size: auto;
+  background-position: center;
+}
+
+@media (max-width: 700px) {
+  body {
+    height: unset;
+    background-position: right top;
+  }
+}
+
+.grid {
+  display: grid;
+  max-width: 700px;
+
+  padding: 12px;
+  margin: 100px auto auto;
+
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 0px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50px;
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  text-align: justify;
 }
 
 .guessSubmit,
 .newGameButton {
   font-size: 18px;
+  background-color: rgb(184, 166, 146);
+  border-radius: 10px;
 }
 
 .newGameButton {
@@ -27,13 +59,18 @@ body {
   text-align: center;
 }
 
+.guessField {
+  height: 18px;
+  width: 50px;
+}
+
 .guessField:invalid {
   border: 2px solid red;
   outline: none;
 }
 
 .guessField:valid {
-  border: 2px solid yellow;
+  border: 2px solid rgb(150, 90, 0);
   outline: none;
 }
 
