@@ -1,18 +1,26 @@
 body {
+  display: flex;
+
   height: 100vh;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
 
-  background: url("background.jpg") no-repeat;
+  background-color: #aaacff;
+  background-image: url("background.jpg");
+  background-repeat: no-repeat;
 
-  background-size: auto;
+  background-size: cover;
   background-position: center;
+
+  margin: 0;
+
+  transition: all 500ms;
 }
 
 @media (max-width: 700px) {
   body {
-    height: unset;
     background-position: right top;
+    transition: all 500ms;
   }
 }
 
@@ -21,7 +29,7 @@ body {
   max-width: 700px;
 
   padding: 12px;
-  margin: 100px auto auto;
+  margin: auto;
 
   background-color: rgba(255, 255, 255, 0.7);
   border: 0px solid rgba(255, 255, 255, 0.7);
